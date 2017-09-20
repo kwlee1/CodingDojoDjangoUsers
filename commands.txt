@@ -1,0 +1,25 @@
+Retrieve all users: 
+from apps.user_login_models import *
+
+Get last user: 
+Users.objects.last()
+
+
+Create a record:
+Users.objects.create(first_name="Keith", last_name="Lee", email_address="keith@lee.com", age="30")
+Users.objects.create(first_name="Jim", last_name="Pollaro", email_address="jim@pollaro.com", age=38)
+
+Get the first user:
+Users.objects.first()
+
+Get users sorted by first name:
+Users.objects.order_by("first_name")
+
+Get record and UPDATE last_name:
+me = Users.objects.get(id=1)
+me.last_name="Lee2"
+me.save
+
+Delete record id=2
+Users.objects.get(id=2).delete() 
+
